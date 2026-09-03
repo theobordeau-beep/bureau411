@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Mon Site</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000000; /* Couleur de fond si l'image ne couvre pas tout */
+            overflow: hidden;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ton image remplit l'écran en conservant ses proportions */
+        img.main-image {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain; /* Change pour 'cover' si tu veux remplir tout l'espace en coupant les bords */
+            display: block;
+        }
+
+        /* Le logo Instagram positionné au MILIEU en BAS */
+        .insta-link {
+            position: absolute;
+            bottom: 30px; /* Distance par rapport au bas de l'écran */
+            left: 50%;
+            transform: translateX(-50%); /* Permet de centrer parfaitement l'élément horizontalement */
+            
+            /* Style du cercle autour de l'icône */
+            background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+            padding: 12px;
+            border-radius: 50%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none; /* Enlève le soulignement du lien */
+            transition: opacity 0.2s ease;
+            z-index: 10; /* S'assure que le logo passe bien au-dessus de l'image */
+        }
+
+        .insta-link:hover {
+            opacity: 0.7;
+        }
+
+        .insta-icon {
+            width: 30px;
+            height: 30px;
+            color: #ffffff; /* Couleur du logo (blanc), change en #000000 si ton image est claire */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Ton image principale -->
+        <img src="image.jpg" alt="Accueil" class="main-image">
+
+        <!-- Logo Instagram cliquable positionné au milieu en bas -->
+        <a href="https://www.instagram.com/bureau_411/" target="_blank" class="insta-link" aria-label="Instagram">
+            <svg class="insta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+
+</body>
+</html>
